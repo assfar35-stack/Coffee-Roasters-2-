@@ -89,7 +89,9 @@
       .commitment-main {
         @apply flex items-center justify-between gap-[125px] max-lg:flex-col max-lg:gap-[56px];
       }
-
+      .quality-section {
+        @apply flex items-center justify-center;
+      }
     </style>
     <title>About Us - Coffee Roasters</title>
   </head>
@@ -121,9 +123,7 @@
     </section>
 
     <section class="commitment-section">
-
       <div class="commitment-main">
-
         <div class="w-full md:w-1/2 flex-shrink-0">
           <div class="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
             <img
@@ -136,7 +136,9 @@
 
         <div class="space-y-10">
           <h2 class="text-dark-grey-blue">Our commitment</h2>
-          <p class="text-dark-grey-blue text-base leading-[26px] font-barlow max-w-[440px]">
+          <p
+            class="text-dark-grey-blue text-base leading-[26px] font-barlow max-w-[440px]"
+          >
             We're built on a simple mission and a commitment to doing good along
             the way. We want to make it easy for you to discover and brew the
             world's best coffee at home. It all starts at the source. To locate
@@ -149,6 +151,38 @@
             only the finest blends, we roast each lot to highlight tasting
             profiles distinctive to their native growing region.
           </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="quality-section "
+    >
+      <div class="relative w-[1220px] h-[700px] flex items-center">
+        <div class=" w-full rounded-[8px] bg-dark-grey-blue py-[100px] px-[80px]">
+          <div class="max-w-xl">
+            <h2 class="text-light-cream mb-[32px]"
+            >
+              Uncompromising quality
+            </h2>
+            <p
+              class="body"
+            >
+              Although we work with growers who pay close attention to all
+              stages of harvest and processing, we employ, on our end, a
+              rigorous quality control program to avoid over-roasting or baking
+              the coffee dry. Every bag of coffee is tagged with a roast date
+              and batch number. Our goal is to roast consistent, user-friendly
+              coffee, so that brewing is easy and enjoyable.
+            </p>
+          </div>
+        </div>
+
+        <div class="absolute right-10 -top-2 w-[450px]">
+          <img
+            src="./images/Bitmap(2).jpg"
+            alt="Coffee pouring"
+            class="w-[445px] h-[474px] object-cover rounded-[8px]"
+          />
         </div>
       </div>
     </section>
