@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+      @theme {
+        /*colors */
+        --color-dark-cyan: #0e8784;
+        --color-cyan: #66d2cf;
+        --color-dark-grey-blue: #333d4b;
+        --color-pale-orange: #fdd6ba;
+        --color-light-cream: #fefcf7;
+        --color-grey: #83888f;
+        --color-disabled: #e2dedb;
+        /* fonts */
+        --font-barlow: "Barlow", sans-serif;
+        --font-fraunces: "Fraunces", serif;
+        /* font title */
+        --text-10xl: 150px;
+        --text-10xl-line-height: 72px;
+        --text-7xl: 72px;
+        --text-7xl-line-height: 72px;
+        --text-4xl: 40px;
+        --text-4xl-line-height: 48px;
+        --text-3xl: 32px;
+        --text-3xl-line-height: 36px;
+        --text-2xl: 24px;
+        --text-2xl-line-height: 32px;
+        /* font body */
+        --text-base: 16px;
+        --text-base-line-height: 26px;
+        --text-xs: 12px;
+        --text-xs-line-height: 15px;
+      }
+      .title {
+        @apply text-10xl font-fraunces font-black;
+      }
+      h1 {
+        @apply font-fraunces font-black text-7xl;
+      }
+      h2 {
+        @apply font-fraunces font-black text-4xl;
+      }
+      h3 {
+        @apply font-fraunces font-black text-3xl;
+      }
+      h4 {
+        @apply font-fraunces font-black text-2xl;
+      }
+
+      .body {
+        @apply font-barlow text-base text-light-cream;
+      }
+      nav {
+        @apply font-barlow text-xs text-grey font-bold uppercase tracking-[0.92px] 
+        flex items-center gap-[32px];
+      }
+      button {
+        @apply font-fraunces text-lg text-white font-black  
+        rounded-md bg-dark-cyan py-[15px] px-[31px] hover:bg-cyan disabled:bg-disabled;
+      }
+      .flex-between {
+        @apply flex items-center justify-between;
+      }
+      .hero-section-about {
+        @apply flex items-center justify-between px-[81px];
+      }
+      .hero-img-about {
+        @apply w-[1280px] h-[450px] mx-auto bg-[url('./images/Bitmap(1).jpg')] bg-cover bg-center items-center rounded-[8px];
+      }
+    </style>
+    <title>About Us - Coffee Roasters</title>
+  </head>
+  <body>
+    <header class="flex-between py-[43px] px-[81px] max-w-[1430px] mx-auto">
+      <img
+        src="./images/Group 5(2).png"
+        alt="Coffee Roasters Logo"
+        class="w-[236px] h-[26px]"
+      />
+      <nav>
+        <a href="./index.html">Home</a>
+        <a href="./about.html">About Us</a>
+        <a href="#">Create Your Plan</a>
+      </nav>
+    </header>
+    <section>
+      <div class="hero-img-about hero-section-about mx-auto">
+        <div class="max-w-[445px]">
+          <h1 class="text-white mb-[24px]">About Us</h1>
+          <p class="body mb-[56px] text-white max-w-[454px]">
+            Coffeeroasters began its journey of exotic discovery in 1999,
+            highlighting stories of coffee from around the world. We have since
+            been dedicated to bring the perfect cup - from bean to brew - in
+            every shipment.
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
