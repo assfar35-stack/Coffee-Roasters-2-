@@ -92,6 +92,15 @@
       .quality-section {
         @apply flex items-center justify-center;
       }
+      .our-headquarters {
+        @apply px-[115px] pl-[117px] pr-[241px] max-w-[1360px] mx-auto;
+      }
+      .countries {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-[95px] mb-12;
+      }
+      .countries ol {
+        @apply text-dark-grey-blue text-base leading-[26px] font-barlow;
+      }
     </style>
     <title>About Us - Coffee Roasters</title>
   </head>
@@ -154,19 +163,14 @@
         </div>
       </div>
     </section>
-    <section
-      class="quality-section "
-    >
+    <section class="quality-section">
       <div class="relative w-[1220px] h-[700px] flex items-center">
-        <div class=" w-full rounded-[8px] bg-dark-grey-blue py-[100px] px-[80px]">
+        <div
+          class="w-full rounded-[8px] bg-dark-grey-blue py-[100px] px-[80px]"
+        >
           <div class="max-w-xl">
-            <h2 class="text-light-cream mb-[32px]"
-            >
-              Uncompromising quality
-            </h2>
-            <p
-              class="body"
-            >
+            <h2 class="text-light-cream mb-[32px]">Uncompromising quality</h2>
+            <p class="body">
               Although we work with growers who pay close attention to all
               stages of harvest and processing, we employ, on our end, a
               rigorous quality control program to avoid over-roasting or baking
@@ -184,6 +188,56 @@
             class="w-[445px] h-[474px] object-cover rounded-[8px]"
           />
         </div>
+      </div>
+    </section>
+
+    <section class="our-headquarters">
+      <div class="max-w-6xl mx-auto">
+        <h2 class="text-grey mb-[72px]">Our headquarters</h2>
+
+        <div class="countries">
+          <!-- united kingdom -->
+          <div class="united-kingdom">
+            <div>
+              <img src="./images/Combined Shape(4).svg" alt="United Kingdom" class="mb-[45px]" />
+            </div>
+            <h3 class="mb-[24px]">United kingdom</h3>
+            <ol>
+              <li>68  Asfordby Rd</li>
+              <li>Alcaston</li>
+              <li>SY6 1YA</li>
+              <li>+44 1241 918425</li>
+            </ol>
+          </div>
+
+          <!-- canada -->
+          <div class="canada">
+            <div>
+              <img src="./images/Combined Shape(5).svg" alt="Canada" class="mb-[45px]" />
+            </div>
+            <h3 class="mb-[24px]">Canada</h3>
+            <ol>
+              <li>1528  Eglinton Avenue</li>
+              <li>Toronto</li>
+              <li>Ontario M4P 1A6</li>
+              <li>+1 416 485 2997</li>
+            </ol>
+        </div>
+
+        <!--Australia-->
+        <div class="australia">
+          <div>
+            <img src="./images/Combined Shape(6).svg" alt="Australia" class="mb-[45px]" />
+          </div>
+          <h3 class="mb-[24px]">Australia</h3>
+          <ol>
+            <li>369  George St</li>
+            <li>Sydney NSW 2000</li>
+            <li>victoria</li>
+            <li>+61 2 8203 4785</li>
+          </ol>
+        </div>
+
       </div>
     </section>
   </body>
