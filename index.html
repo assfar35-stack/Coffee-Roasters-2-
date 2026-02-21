@@ -51,7 +51,7 @@
         @apply text-10xl font-fraunces font-black;
       }
       h1 {
-        @apply font-fraunces font-black text-7xl;
+        @apply font-fraunces font-black text-7xl md:text-5xl;
       }
       h2 {
         @apply font-fraunces font-black text-4xl;
@@ -68,7 +68,7 @@
       }
       nav {
         @apply font-barlow text-xs text-grey font-bold uppercase tracking-[0.92px] 
-        flex items-center gap-[32px];
+       flex flex-col md:flex-row items-center gap-6 lg:gap-[32px] mb-8 lg:mb-0;
       }
       button {
         @apply font-fraunces text-lg text-white font-black  
@@ -81,39 +81,37 @@
         @apply flex items-center justify-between px-[81px];
       }
       .hero-img {
-        @apply w-[1200px] h-[600px] bg-[url('./images/Bitmap(1).png')] bg-cover bg-center items-center rounded-[8px];
+        @apply lg:w-[1200px] lg:h-[600px] bg-[url('./images/Bitmap(1).png')] bg-cover bg-center items-center rounded-[8px] md:w-[689px] md:h-[500px];
       }
       .collection-section {
         @apply py-[120px] px-[81px] max-w-[1360px] mx-auto;
       }
       .collection-container {
-        @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[50px] p-10;
+        @apply grid grid-cols-1 lg:grid-cols-4 gap-[50px] p-10;
       }
       .collection-card {
-        @apply flex flex-col items-center text-left;
+        @apply flex lg:flex-col lg:items-center lg:space-y-6 md:space-y-4 lg:text-left md:flex-row md:items-start md:text-left;
+      }
+      .collection-card-content {
+        @apply flex flex-col space-y-4 md:pt-4 md:max-w-[282px];
       }
       .benefits-section {
         @apply py-[30px] px-[81px] max-w-[1360px] mx-auto;
       }
       .content-header {
-        @apply bg-dark-grey-blue rounded-lg mr-[81px] w-full h-[577px] flex flex-col items-center -z-10;
+        @apply bg-dark-cyan rounded-[8px] p-8 lg:text-center flex lg:flex-col lg:items-center md:flex-row md:text-left md:items-start md:gap-[55px];
       }
       .cards-container {
-        @apply flex justify-center pb-[168px] gap-[30px] max-w-[1110px] mx-auto 
-           relative z-10 -mt-[200px];
-      }
-      .card {
-        @apply bg-dark-cyan py-10 px-[30px] rounded-lg flex-1 flex flex-col 
-           items-center max-w-[350px] h-[400px] text-center text-light-cream;
+        @apply grid lg:grid-cols-3 md:grid-cols-1 gap-8 px-8 -mt-20;
       }
       .card-img {
-        @apply mb-6 h-[72px] w-[64px];
+        @apply lg:mb-3 lg:h-[72px] lg:w-[64px] md:h-[56px] md:w-[56px];
       }
       .how-it-works {
-        @apply px-[115px] pl-[117px] pr-[241px] max-w-[1360px] mx-auto;
+        @apply px-[115px] pl-[117px] pr-[241px] max-w-[1280px] mx-auto;
       }
       .steps {
-        @apply grid grid-cols-1 md:grid-cols-3 gap-[95px] mb-12;
+        @apply grid grid-cols-1 md:grid-cols-3 md:justify-between gap-[95px] mb-12;
       }
       .step-01,
       .step-02,
@@ -141,7 +139,7 @@
       <div class="hero-img hero-section mx-auto">
         <div class="max-w-[493px]">
           <h1 class="text-white mb-[30px]">Great Coffee<br />Made Simple.</h1>
-          <p class="body mb-[56px] text-white max-w-[454px]">
+          <p class="body mb-[56px] text-white max-w-[454px] md:max-w-[398px]">
             Start your mornings with the world’s best coffee. Try our expertly
             curated artisan coffees from our best roasters delivered directly to
             your door, at your schedule.
@@ -166,7 +164,7 @@
               class="w-full max-w-[200px] h-auto"
             />
           </div>
-          <div class="space-y-6">
+          <div class="space-y-6 collection-card-content">
             <h4 class="text-dark-grey-blue">Gran Espresso</h4>
             <p class="text-dark-grey-blue">
               Light and flavorful with cocoa and black pepper for an intense
@@ -182,7 +180,7 @@
               class="w-full max-w-[200px] h-auto"
             />
           </div>
-          <div class="space-y-6">
+          <div class="space-y-6 collection-card-content">
             <h4 class="text-dark-grey-blue">Planalto</h4>
             <p class="text-dark-grey-blue">
               Brazilian dark roast with rich and velvety body, and hints of
@@ -198,7 +196,7 @@
               class="w-full max-w-[200px] h-auto"
             />
           </div>
-          <div class="space-y-6">
+          <div class="space-y-6 collection-card-content">
             <h4 class="text-dark-grey-blue">Piccollo</h4>
             <p class="text-dark-grey-blue">
               Mild and smooth blend featuring notes of toasted almond and dried
@@ -214,7 +212,7 @@
               class="w-full max-w-[200px] h-auto"
             />
           </div>
-          <div class="space-y-6">
+          <div class="space-y-6 collection-card-content">
             <h4 class="text-dark-grey-blue">Danche</h4>
             <p class="text-dark-grey-blue">
               Ethiopian hand-harvested blend densely packed with vibrant fruit
@@ -224,66 +222,97 @@
         </div>
       </div>
     </section>
+
     <section class="benefits-section">
-      <div class="content-header">
-        <h2 class="text-light-cream pt-[100px]">Why choose us?</h2>
-        <p class="body text-center text-light-cream max-w-[540px] mt-[32px]">
-          A large part of our role is choosing which particular coffees will be
-          featured in our range. This means working closely with the best coffee
-          growers to give you a more impactful experience on every level.
-        </p>
-      </div>
-
-      <div class="cards-container">
-        <div class="card">
-          <img src="./images/Shape(2).png" alt="Coffee bean" class="card-img" />
-          <h3 class="pb-6">Best quality</h3>
-          <p class="mb-12 max-w-[280px]">
-            Discover an endless variety of the world’s best artisan coffee from
-            each of our roasters.
+      <div class="max-w-6xl mx-auto px-4">
+        <div
+          class="bg-dark-grey-blue rounded-[8px] pt-20 pb-32 px-6 text-center"
+        >
+          <h2 class="text-light-cream mb-6">Why choose us?</h2>
+          <p class="body mx-auto max-w-[540px]">
+            A large part of our role is choosing which particular coffees will
+            be featured in our range. This means working closely with the best
+            coffee growers to give you a more impactful experience on every
+            level.
           </p>
         </div>
 
-        <div class="card">
-          <img
-            src="./images/Combined Shape(2).svg"
-            alt="Gift "
-            class="card-img"
-          />
-          <h3 class="pb-6">Exclusive benefits</h3>
-          <p class="mb-12 max-w-[280px]">
-            Special offers and swag when you subscribe, including 30% off your
-            first shipment.
-          </p>
-        </div>
+        <div class="cards-container">
+          <div class="content-header">
+            <div class="flex-shrink-0">
+              <img
+                src="./images/Shape(2).png"
+                alt="Coffee bean"
+                class="card-img"
+              />
+            </div>
+            <div class="lg:text-center md:text-left">
+              <h3 class="text-light-cream mb-8 whitespace-nowrap">
+                Best quality
+              </h3>
+              <p class="body">
+                Discover an endless variety of the world’s best artisan coffee
+                from each of our roasters.
+              </p>
+            </div>
+          </div>
 
-        <div class="card">
-          <img
-            src="./images/Combined Shape(3).svg"
-            alt="Shipping"
-            class="card-img"
-          />
-          <h3 class="pb-6">Free shipping</h3>
-          <p class="mb-12 max-w-[280px]">
-            We cover the cost and coffee is delivered fast. Peak freshness:
-            guaranteed.
-          </p>
+          <div class="content-header">
+            <div>
+              <img
+                src="./images/Combined Shape(2).svg"
+                alt="Gift "
+                class="card-img"
+              />
+            </div>
+            <div class="lg:text-center md:text-left">
+              <h3 class="text-light-cream mb-8 whitespace-nowrap">
+                Exclusive benefits
+              </h3>
+              <p class="body">
+                Special offers and swag when you subscribe, including 30% off
+                your first shipment.
+              </p>
+            </div>
+          </div>
+
+          <div class="content-header">
+            <div>
+              <img
+                src="./images/Combined Shape(3).svg"
+                alt="Shipping"
+                class="card-img"
+              />
+            </div>
+            <div class="lg:text-center md:text-left">
+              <h3 class="text-light-cream mb-8 whitespace-nowrap">
+                Free shipping
+              </h3>
+              <p class="body">
+                We cover the cost and coffee is delivered fast. Peak freshness:
+                guaranteed.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="how-it-works">
-      <div class="max-w-6xl mx-auto">
+      <div class="mx-auto">
         <h2 class="text-grey pb-[32px]">How it works</h2>
 
+        <div class="lg:hidden md:">
+          <img src="./images/Group 19.png" alt="steps-line" />
+        </div>
+
         <div class="steps">
-          <!-- Step 01 -->
           <div class="step-01">
             <span
               class="text-7xl font-black font-fraunces text-pale-orange mb-[32px]"
               >01</span
             >
-            <h3 class="mb-[42px]">Pick your <br />coffee</h3>
+            <h3 class="mb-[42px] whitespace-nowrap">Pick your <br />coffee</h3>
             <p class="text-grey">
               Select from our evolving range of artisan coffees. Our beans are
               ethically sourced and we pay fair prices for them. There are new
@@ -291,13 +320,14 @@
             </p>
           </div>
 
-          <!-- Step 02 -->
           <div class="step-02">
             <span
               class="text-7xl font-black font-fraunces text-pale-orange mb-[32px]"
               >02</span
             >
-            <h3 class="mb-[42px]">Choose the frequency</h3>
+            <h3 class="mb-[42px] whitespace-nowrap">
+              Choose the <br />frequency
+            </h3>
             <p class="text-grey">
               Customize your order frequency, quantity, even your roast style
               and grind type. Pause, skip or cancel your subscription with no
@@ -305,13 +335,14 @@
             </p>
           </div>
 
-          <!-- Step 03 -->
           <div class="step-03">
             <span
               class="text-7xl font-black font-fraunces text-pale-orange mb-[32px]"
               >03</span
             >
-            <h3 class="mb-[42px]">Receive and <br />enjoy!</h3>
+            <h3 class="mb-[42px] whitespace-nowrap">
+              Receive and <br />enjoy!
+            </h3>
             <p class="text-grey">
               We ship your package within 48 hours, freshly roasted. Sit back
               and enjoy award-winning world-class coffees curated to provide a
@@ -324,22 +355,44 @@
       </div>
     </section>
 
-    <footer class="mt-[115px] mb-[71px] max-w-[1280px] mx-auto ">
-      <div class="flex-between bg-dark-grey-blue py-[43px] px-[81px] rounded-[8px] mr-[20px]">
+    <footer class="mt-[115px] mb-[71px] max-w-[1280px] mx-auto px-4">
+      <div
+        class="flex flex-col lg:flex-row items-center lg:justify-between bg-dark-grey-blue py-[54px] lg:py-[43px] px-[81px] rounded-[8px]"
+      >
         <img
           src="./images/Group 5(3).png"
           alt="Coffee Roasters Logo"
-          class="w-[236px] h-[26px]"
+          class="lg:w-[236px] lg:h-[26px] md:w-[203px] lg:h-[24px] mb-8 lg:mb-0"
         />
+
         <nav>
-          <a href="./index.html">Home</a>
-          <a href="./about.html">About Us</a>
-          <a href="#">Create Your Plan</a>
+          <a href="./index.html" class="hover:text-white transition-colors"
+            >Home</a
+          >
+          <a href="./about.html" class="hover:text-white transition-colors"
+            >About Us</a
+          >
+          <a href="#" class="hover:text-white transition-colors"
+            >Create Your Plan</a
+          >
         </nav>
+
         <div class="flex items-center gap-[24px]">
-          <img src="./images/Path.png" alt="Facebook Icon" class="w-[24px] h-[24px]" />
-          <img src="./images/Shape(1).png" alt="Instagram Icon" class="w-[24px] h-[24px] " />
-          <img src="./images/Path(1).png" alt="Twitter Icon" class="w-[24px] h-[24px]" />
+          <img
+            src="./images/Path.png"
+            alt="Facebook"
+            class="w-6 h-6 cursor-pointer"
+          />
+          <img
+            src="./images/Path(1).png"
+            alt="Twitter"
+            class="w-6 h-6 cursor-pointer"
+          />
+          <img
+            src="./images/Shape(1).png"
+            alt="Instagram"
+            class="w-6 h-6 cursor-pointer"
+          />
         </div>
       </div>
     </footer>
