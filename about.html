@@ -1,4 +1,5 @@
 <!doctype html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -10,27 +11,24 @@
       href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&display=swap"
       rel="stylesheet"
     />
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <style type="text/tailwindcss">
       @theme {
-        /*colors */
         --color-dark-cyan: #0e8784;
         --color-cyan: #66d2cf;
         --color-dark-grey-blue: #333d4b;
         --color-pale-orange: #fdd6ba;
         --color-light-cream: #fefcf7;
         --color-grey: #83888f;
+        
         --color-disabled: #e2dedb;
-        /* fonts */
         --font-barlow: "Barlow", sans-serif;
         --font-fraunces: "Fraunces", serif;
-        /* font title */
+
         --text-10xl: 150px;
         --text-10xl-line-height: 72px;
         --text-7xl: 72px;
@@ -41,7 +39,7 @@
         --text-3xl-line-height: 36px;
         --text-2xl: 24px;
         --text-2xl-line-height: 32px;
-        /* font body */
+
         --text-base: 16px;
         --text-base-line-height: 26px;
         --text-xs: 12px;
@@ -51,77 +49,86 @@
         @apply text-10xl font-fraunces font-black lowercase;
       }
       h1 {
-        @apply font-fraunces font-black text-7xl;
+        @apply font-fraunces font-black text-[36px] md:text-[48px] lg:text-[72px];
       }
       h2 {
-        @apply font-fraunces font-black text-4xl;
+        @apply font-fraunces font-black text-[30px] md:text-[40px];
       }
       h3 {
-        @apply font-fraunces font-black text-3xl;
+        @apply font-fraunces font-black text-[24px] md:text-[32px];
       }
       h4 {
-        @apply font-fraunces font-black text-2xl;
+        @apply font-fraunces font-black text-[24px];
       }
 
       .body {
-        @apply font-barlow text-base text-light-cream;
+        @apply font-barlow text-[16px] text-light-cream leading-[26px];
       }
+
       nav {
-        @apply font-barlow text-xs text-grey font-bold uppercase tracking-[0.92px] 
-        flex items-center gap-[32px];
+        @apply font-barlow text-[12px] text-grey font-bold uppercase tracking-[0.92px] 
+        flex flex-col md:flex-row items-center gap-[24px] lg:gap-[32px] hidden md:flex;
       }
-      button {
-        @apply font-fraunces text-lg text-white font-black  
-        rounded-md bg-dark-cyan py-[15px] px-[31px] hover:bg-cyan disabled:bg-disabled;
-      }
-      .flex-between {
-        @apply flex items-center justify-between;
-      }
-      .hero-section-about {
-        @apply flex items-center justify-between px-[81px];
-      }
+
       .hero-img-about {
-        @apply w-[1280px] h-[450px] mx-auto bg-[url('./images/Bitmap(1).jpg')] bg-cover bg-center items-center rounded-[8px];
+        @apply w-full max-w-[1280px] min-h-[400px] md:h-[450px] mx-auto bg-[url('./images/Bitmap(1).jpg')] bg-cover bg-center flex items-center rounded-[8px] px-[40px] md:px-[60px] lg:px-[81px];
       }
       .commitment-section {
-        @apply py-[168px] px-[85px] max-w-[1250px] mx-auto;
+        @apply py-[80px] md:py-[120px] lg:py-[168px] px-[24px] md:px-[40px] lg:px-[85px] max-w-[1250px] mx-auto;
       }
       .commitment-main {
-        @apply flex items-center justify-between gap-[125px] max-lg:flex-col max-lg:gap-[56px];
+        @apply flex flex-col md:flex-row items-center gap-[48px] lg:gap-[125px];
       }
       .quality-section {
-        @apply flex items-center justify-center;
+        @apply px-[24px] md:px-[40px] lg:px-[85px] py-[80px] md:py-[160px];
       }
       .our-headquarters {
-        @apply px-[115px] pl-[117px] pr-[241px] max-w-[1360px] mx-auto;
+        @apply px-[24px] md:px-[40px] lg:px-[115px] max-w-[1360px] mx-auto mb-[80px];
       }
       .countries {
-        @apply grid grid-cols-1 md:grid-cols-3 gap-[95px] mb-12;
-      }
-      .countries ol {
-        @apply text-dark-grey-blue text-base leading-[26px] font-barlow;
+        @apply grid grid-cols-1 md:grid-cols-[repeat(3,minmax(0,1fr))] gap-[40px] lg:gap-[95px];
       }
     </style>
     <title>About Us - Coffee Roasters</title>
   </head>
-  <body>
-    <header class="flex-between py-[43px] px-[81px] max-w-[1430px] mx-auto">
+  <body class="bg-light-cream">
+    <header
+      class="flex items-center justify-between py-[40px] px-[24px] md:px-[40px] lg:px-[81px] max-w-[1360px] mx-auto"
+    >
       <img
         src="./images/Group 5(2).png"
-        alt="Coffee Roasters Logo"
-        class="w-[236px] h-[26px]"
+        alt="Logo"
+        class="w-[163px] md:w-[236px]"
       />
-      <nav>
-        <a href="./index.html">Home</a>
-        <a href="./about.html">About Us</a>
-        <a href="#">Create Your Plan</a>
+      <nav class="hidden md:flex">
+        <a
+          href="./index.html"
+          class="hover:text-dark-grey-blue transition-colors"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="hover:text-dark-grey-blue transition-colors"
+          >About Us</a
+        >
+        <a href="#" class="hover:text-dark-grey-blue transition-colors"
+          >Create Your Plan</a
+        >
       </nav>
+      <div class="md:hidden cursor-pointer">
+        <img
+          src="./images/Combined Shape(2).png"
+          alt="Open Menu"
+          class="w-[16px] h-[16px]"
+        />
+      </div>
     </header>
-    <section>
-      <div class="hero-img-about hero-section-about mx-auto">
-        <div class="max-w-[445px]">
+
+    <section class="px-[24px] md:px-[40px] lg:px-[0px]">
+      <div class="hero-img-about">
+        <div class="max-w-[445px] text-center md:text-left mx-auto md:mx-0">
           <h1 class="text-white mb-[24px]">About Us</h1>
-          <p class="body mb-[56px] text-white max-w-[454px]">
+          <p class="body text-white">
             Coffeeroasters began its journey of exotic discovery in 1999,
             highlighting stories of coffee from around the world. We have since
             been dedicated to bring the perfect cup - from bean to brew - in
@@ -133,24 +140,19 @@
 
     <section class="commitment-section">
       <div class="commitment-main">
-        <div class="w-full md:w-1/2 flex-shrink-0">
-          <div class="relative aspect-[4/5] w-full overflow-hidden rounded-2xl">
-            <img
-              src="./images/Bitmap(2).png"
-              alt="Barista pouring coffee"
-              class="absolute inset-0 w-[485px] h-[588px] rounded-[8px]"
-            />
-          </div>
+        <div class="w-full md:w-[50%]">
+          <img
+            src="./images/Bitmap(2).png"
+            alt="Barista"
+            class="w-full rounded-[8px] object-cover aspect-[4/5]"
+          />
         </div>
-
-        <div class="space-y-10">
-          <h2 class="text-dark-grey-blue">Our commitment</h2>
-          <p
-            class="text-dark-grey-blue text-base leading-[26px] font-barlow max-w-[440px]"
-          >
-            We're built on a simple mission and a commitment to doing good along
+        <div class="w-full md:w-[50%] text-center md:text-left">
+          <h2 class="text-dark-grey-blue mb-[32px]">Our commitment</h2>
+          <p class="text-dark-grey-blue font-barlow leading-[26px]">
+            We’re built on a simple mission and a commitment to doing good along
             the way. We want to make it easy for you to discover and brew the
-            world's best coffee at home. It all starts at the source. To locate
+            world’s best coffee at home. It all starts at the source. To locate
             the specific lots we want to purchase, we travel nearly 60 days a
             year trying to understand the challenges and opportunities in each
             of these places. We collaborate with exceptional coffee growers and
@@ -163,14 +165,29 @@
         </div>
       </div>
     </section>
-    <section class="quality-section">
-      <div class="relative w-[1220px] h-[700px] flex items-center">
+    
+    <section
+      class="quality-section px-[24px] md:px-[40px] lg:px-[85px] pt-[80px] pb-[80px] md:pt-[160px] lg:pt-[96px]"
+    >
+      <div class="relative max-w-[1110px] mx-auto">
         <div
-          class="w-full rounded-[8px] bg-dark-grey-blue py-[100px] px-[80px]"
+          class="absolute left-[50%] -translate-x-[140px] -top-[80px] md:-top-[50px] md:-left-[-230px] lg:top-auto lg:-translate-x-[0px] lg:left-[665px] lg:right-[80px] lg:-translate-y-[80px] w-[90%] md:w-[573px] lg:w-[445px] z-[10]"
         >
-          <div class="max-w-xl">
-            <h2 class="text-light-cream mb-[32px]">Uncompromising quality</h2>
-            <p class="body">
+          <img
+            src="./images/Bitmap(2).jpg"
+            alt="Coffee cup with latte art"
+            class="rounded-[8px] w-[279px] h-[156px] object-cover md:w-[573px] md:h-[320px] lg:aspect-auto lg:h-[474px]"
+          />
+        </div>
+
+        <div
+          class="bg-dark-grey-blue rounded-[8px] pt-[140px] pb-[64px] px-[24px] md:pt-[280px] md:pb-[64px] md:px-[56px] lg:pt-[88px] lg:pb-[88px] lg:pl-[85px] lg:pr-[400px] text-center lg:text-left"
+        >
+          <div class="max-w-[576px] mx-auto lg:mx-[0px]">
+            <h2 class="text-light-cream mb-[24px] md:mb-[32px] text-[24px] md:text-[40px]">
+              Uncompromising quality
+            </h2>
+            <p class="body text-pale-orange text-[14px] md:text-[16px]">
               Although we work with growers who pay close attention to all
               stages of harvest and processing, we employ, on our end, a
               rigorous quality control program to avoid over-roasting or baking
@@ -180,85 +197,379 @@
             </p>
           </div>
         </div>
-
-        <div class="absolute right-10 -top-2 w-[450px]">
-          <img
-            src="./images/Bitmap(2).jpg"
-            alt="Coffee pouring"
-            class="w-[445px] h-[474px] object-cover rounded-[8px]"
-          />
-        </div>
       </div>
     </section>
 
     <section class="our-headquarters">
-      <div class="max-w-6xl mx-auto">
-        <h2 class="text-grey mb-[72px]">Our headquarters</h2>
-
-        <div class="countries">
-          <!-- united kingdom -->
-          <div class="united-kingdom">
-            <div>
-              <img src="./images/Combined Shape(4).svg" alt="United Kingdom" class="mb-[45px]" />
-            </div>
-            <h3 class="mb-[24px]">United kingdom</h3>
-            <ol>
-              <li>68  Asfordby Rd</li>
-              <li>Alcaston</li>
-              <li>SY6 1YA</li>
-              <li>+44 1241 918425</li>
-            </ol>
-          </div>
-
-          <!-- canada -->
-          <div class="canada">
-            <div>
-              <img src="./images/Combined Shape(5).svg" alt="Canada" class="mb-[45px]" />
-            </div>
-            <h3 class="mb-[24px]">Canada</h3>
-            <ol>
-              <li>1528  Eglinton Avenue</li>
-              <li>Toronto</li>
-              <li>Ontario M4P 1A6</li>
-              <li>+1 416 485 2997</li>
-            </ol>
+      <h2 class="text-grey mb-[48px] md:mb-[80px] text-center md:text-left">
+        Our headquarters
+      </h2>
+      <div class="countries">
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(4).svg"
+            alt="UK"
+            class="mb-[40px] mx-auto md:mx-[0px]"
+          />
+          <h3 class="mb-[24px]">United Kingdom</h3>
+          <ul class="text-dark-grey-blue font-barlow space-y-[4px]">
+            <li>68 Asfordby Rd</li>
+            <li>Alcaston</li>
+            <li>SY6 1YA</li>
+            <li>+44 1241 918425</li>
+          </ul>
         </div>
-
-        <!--Australia-->
-        <div class="australia">
-          <div>
-            <img src="./images/Combined Shape(6).svg" alt="Australia" class="mb-[45px]" />
-          </div>
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(5).svg"
+            alt="Canada"
+            class="mb-[40px] mx-auto md:mx-[0px]"
+          />
+          <h3 class="mb-[24px]">Canada</h3>
+          <ul class="text-dark-grey-blue font-barlow space-y-[4px]">
+            <li>1528 Eglinton Avenue</li>
+            <li>Toronto</li>
+            <li>Ontario M4P 1A6</li>
+            <li>+1 416 485 2997</li>
+          </ul>
+        </div>
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(6).svg"
+            alt="Australia"
+            class="mb-[40px] mx-auto md:mx-[0px]"
+          />
           <h3 class="mb-[24px]">Australia</h3>
-          <ol>
-            <li>369  George St</li>
+          <ul class="text-dark-grey-blue font-barlow space-y-[4px]">
+            <li>369 George St</li>
             <li>Kewell</li>
-            <li>victoria</li>
+            <li>Victoria</li>
             <li>+61 2 8203 4785</li>
-          </ol>
+          </ul>
         </div>
-
       </div>
     </section>
 
-    <footer class="mt-[115px] mb-[71px] max-w-[1280px] mx-auto ">
-      <div class="flex-between bg-dark-grey-blue py-[43px] px-[81px] rounded-[8px] mr-[20px]">
-        <img
-          src="./images/Group 5(3).png"
-          alt="Coffee Roasters Logo"
-          class="w-[236px] h-[26px]"
-        />
-        <nav>
-          <a href="./index.html">Home</a>
-          <a href="./about.html">About Us</a>
-          <a href="#">Create Your Plan</a>
+    <footer class="mb-[80px] px-[24px] max-w-[1280px] mx-auto">
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between bg-dark-grey-blue py-[56px] px-[40px] rounded-lg gap-[48px]"
+      >
+        <img src="./images/Group 5(3).png" alt="Logo" class="w-[236px]" />
+        <nav class="flex-col md:flex-row gap-[32px]">
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >HOME</a
+          >
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >ABOUT US</a
+          >
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >CREATE YOUR PLAN</a
+          >
         </nav>
-        <div class="flex items-center gap-[24px]">
-          <img src="./images/Path.png" alt="Facebook Icon" class="w-[24px] h-[24px]" />
-          <img src="./images/Shape(1).png" alt="Instagram Icon" class="w-[24px] h-[24px] " />
-          <img src="./images/Path(1).png" alt="Twitter Icon" class="w-[24px] h-[24px]" />
+        <div class="flex gap-[24px]">
+          <img
+            src="./images/Path.png"
+            class="w-[24px] h-[24px] cursor-pointer"
+            alt="Facebook"
+          />
+          <img
+            src="./images/Path(1).png"
+            class="w-[24px] h-[24px] cursor-pointer"
+            alt="Twitter"
+          />
+          <img
+            src="./images/Shape(1).png"
+            class="w-[24px] h-[24px] cursor-pointer"
+            alt="Instagram"
+          />
         </div>
       </div>
     </footer>
   </body>
 </html>
+<!-- <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,100..900,0..100;1,9..144,100..900,0..100&display=swap"
+      rel="stylesheet"
+    />
+
+    <style type="text/tailwindcss">
+      @theme {
+        --color-dark-cyan: #0e8784;
+        --color-cyan: #66d2cf;
+        --color-dark-grey-blue: #333d4b;
+        --color-pale-orange: #fdd6ba;
+        --color-light-cream: #fefcf7;
+        --color-grey: #83888f;
+
+        --color-disabled: #e2dedb;
+        --font-barlow: "Barlow", sans-serif;
+        --font-fraunces: "Fraunces", serif;
+
+        --text-10xl: 150px;
+        --text-10xl-line-height: 72px;
+        --text-7xl: 72px;
+        --text-7xl-line-height: 72px;
+        --text-4xl: 40px;
+        --text-4xl-line-height: 48px;
+        --text-3xl: 32px;
+        --text-3xl-line-height: 36px;
+        --text-2xl: 24px;
+        --text-2xl-line-height: 32px;
+
+        --text-base: 16px;
+        --text-base-line-height: 26px;
+        --text-xs: 12px;
+        --text-xs-line-height: 15px;
+      }
+      .title {
+        @apply text-10xl font-fraunces font-black lowercase;
+      }
+      h1 {
+        @apply font-fraunces font-black text-4xl md:text-5xl lg:text-7xl;
+      }
+      h2 {
+        @apply font-fraunces font-black text-3xl md:text-4xl;
+      }
+      h3 {
+        @apply font-fraunces font-black text-2xl md:text-3xl;
+      }
+      h4 {
+        @apply font-fraunces font-black text-2xl;
+      }
+
+      .body {
+        @apply font-barlow text-base text-light-cream leading-[26px];
+      }
+
+      nav {
+        @apply font-barlow text-xs text-grey font-bold uppercase tracking-[0.92px] 
+        flex flex-col md:flex-row items-center gap-6 lg:gap-[32px] hidden md:flex;
+      }
+
+      .hero-img-about {
+        @apply w-full max-w-[1280px] min-h-[400px] md:h-[450px] mx-auto bg-[url('./images/Bitmap(1).jpg')] bg-cover bg-center flex items-center rounded-[8px] px-10 md:px-[60px] lg:px-[81px];
+      }
+      .commitment-section {
+        @apply py-20 md:py-[120px] lg:py-[168px] px-6 md:px-10 lg:px-[85px] max-w-[1250px] mx-auto;
+      }
+      .commitment-main {
+        @apply flex flex-col md:flex-row items-center gap-12 lg:gap-[125px];
+      }
+      .quality-section {
+        @apply px-6 md:px-10 lg:px-[85px] py-20 md:py-40;
+      }
+      .our-headquarters {
+        @apply px-6 md:px-10 lg:px-[115px] max-w-[1360px] mx-auto mb-20;
+      }
+      .countries {
+        @apply grid grid-cols-1 md:grid-cols-3 gap-10 lg:gap-[95px];
+      }
+    </style>
+    <title>About Us - Coffee Roasters</title>
+  </head>
+  <body class="bg-light-cream">
+    <header
+      class="flex items-center justify-between py-[40px] px-[24px] md:px-[40px] lg:px-[81px] max-w-[1360px] mx-auto"
+    >
+      <img
+        src="./images/Group 5(2).png"
+        alt="Logo"
+        class="w-[163px] md:w-[236px]"
+      />
+      <nav class="hidden md:flex">
+        <a
+          href="./index.html"
+          class="hover:text-dark-grey-blue transition-colors"
+          >Home</a
+        >
+        <a
+          href="./about.html"
+          class="hover:text-dark-grey-blue transition-colors"
+          >About Us</a
+        >
+        <a href="#" class="hover:text-dark-grey-blue transition-colors"
+          >Create Your Plan</a
+        >
+      </nav>
+      <div class="md:hidden cursor-pointer">
+        <img
+          src="./images/Combined Shape(2).png"
+          alt="Open Menu"
+          class="w-4 h-4"
+        />
+      </div>
+    </header>
+
+    <section class="px-[24px] md:px-[40] lg:px-0">
+      <div class="hero-img-about">
+        <div class="max-w-[445px] text-center md:text-left mx-auto md:mx-0">
+          <h1 class="text-white mb-6">About Us</h1>
+          <p class="body text-white">
+            Coffeeroasters began its journey of exotic discovery in 1999,
+            highlighting stories of coffee from around the world. We have since
+            been dedicated to bring the perfect cup - from bean to brew - in
+            every shipment.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="commitment-section">
+      <div class="commitment-main">
+        <div class="w-full md:w-1/2">
+          <img
+            src="./images/Bitmap(2).png"
+            alt="Barista"
+            class="w-full rounded-[8px] object-cover aspect-[4/5]"
+          />
+        </div>
+        <div class="w-full md:w-1/2 text-center md:text-left">
+          <h2 class="text-dark-grey-blue mb-8">Our commitment</h2>
+          <p class="text-dark-grey-blue font-barlow leading-[26px]">
+            We’re built on a simple mission and a commitment to doing good along
+            the way. We want to make it easy for you to discover and brew the
+            world’s best coffee at home. It all starts at the source. To locate
+            the specific lots we want to purchase, we travel nearly 60 days a
+            year trying to understand the challenges and opportunities in each
+            of these places. We collaborate with exceptional coffee growers and
+            empower a global community of farmers through with well above
+            fair-trade benchmarks. We also offer training, support farm
+            community initiatives, and invest in coffee plant science. Curating
+            only the finest blends, we roast each lot to highlight tasting
+            profiles distinctive to their native growing region.
+          </p>
+        </div>
+      </div>
+    </section>
+    <section
+      class="quality-section px-6 md:px-10 lg:px-[85px] pt-20 pb-20 md:pt-40 lg:pt-24"
+    >
+      <div class="relative max-w-[1110px] mx-auto">
+        <div
+          class="absolute left-1/2 -translate-x-[140px] -top-20 md:-top-[50px] md:-left-[-230px] lg:top-auto lg:-translate-x-0 lg:left-[680px] lg:right-20 lg:-translate-y-20 w-[90%] md:w-[573px] lg:w-[445px] z-10"
+        >
+          <img
+            src="./images/Bitmap(2).jpg"
+            alt="Coffee cup with latte art"
+            class="rounded-[8px] w-[279px] h-[156px] object-cover  md:w-[573px] md:h-[320px] lg:aspect-auto lg:h-[474px]"
+          />
+        </div>
+
+        <div
+          class="bg-dark-grey-blue rounded-[8px] pt-[140px] pb-16 px-6 md:pt-[280px] md:pb-16 md:px-14 lg:pt-[88px] lg:pb-[88px] lg:pl-[85px] lg:pr-[400px] text-center lg:text-left"
+        >
+          <div class="max-w-xl mx-auto lg:mx-0">
+            <h2 class="text-light-cream mb-6 md:mb-8 text-2xl md:text-4xl">
+              Uncompromising quality
+            </h2>
+            <p class="body text-pale-orange/80 text-sm md:text-base">
+              Although we work with growers who pay close attention to all
+              stages of harvest and processing, we employ, on our end, a
+              rigorous quality control program to avoid over-roasting or baking
+              the coffee dry. Every bag of coffee is tagged with a roast date
+              and batch number. Our goal is to roast consistent, user-friendly
+              coffee, so that brewing is easy and enjoyable.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="our-headquarters">
+      <h2 class="text-grey mb-12 md:mb-20 text-center md:text-left">
+        Our headquarters
+      </h2>
+      <div class="countries">
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(4).svg"
+            alt="UK"
+            class="mb-10 mx-auto md:mx-0"
+          />
+          <h3 class="mb-6">United Kingdom</h3>
+          <ul class="text-dark-grey-blue font-barlow space-y-1">
+            <li>68 Asfordby Rd</li>
+            <li>Alcaston</li>
+            <li>SY6 1YA</li>
+            <li>+44 1241 918425</li>
+          </ul>
+        </div>
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(5).svg"
+            alt="Canada"
+            class="mb-10 mx-auto md:mx-0"
+          />
+          <h3 class="mb-6">Canada</h3>
+          <ul class="text-dark-grey-blue font-barlow space-y-1">
+            <li>1528 Eglinton Avenue</li>
+            <li>Toronto</li>
+            <li>Ontario M4P 1A6</li>
+            <li>+1 416 485 2997</li>
+          </ul>
+        </div>
+        <div class="text-center md:text-left">
+          <img
+            src="./images/Combined Shape(6).svg"
+            alt="Australia"
+            class="mb-10 mx-auto md:mx-0"
+          />
+          <h3 class="mb-6">Australia</h3>
+          <ul class="text-dark-grey-blue font-barlow space-y-1">
+            <li>369 George St</li>
+            <li>Kewell</li>
+            <li>Victoria</li>
+            <li>+61 2 8203 4785</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer class="mb-20 px-6 max-w-[1280px] mx-auto">
+      <div
+        class="flex flex-col lg:flex-row items-center justify-between bg-dark-grey-blue py-14 px-10 rounded-lg gap-12"
+      >
+        <img src="./images/Group 5(3).png" alt="Logo" class="w-[236px]" />
+        <nav class="flex-col md:flex-row gap-8">
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >HOME</a
+          >
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >ABOUT US</a
+          >
+          <a href="#" class="text-grey hover:text-white transition-colors"
+            >CREATE YOUR PLAN</a
+          >
+        </nav>
+        <div class="flex gap-6">
+          <img
+            src="./images/Path.png"
+            class="w-6 h-6 cursor-pointer"
+            alt="Facebook"
+          />
+          <img
+            src="./images/Path(1).png"
+            class="w-6 h-6 cursor-pointer"
+            alt="Twitter"
+          />
+          <img
+            src="./images/Shape(1).png"
+            class="w-6 h-6 cursor-pointer"
+            alt="Instagram"
+          />
+        </div>
+      </div>
+    </footer>
+  </body>
+</html> -->
